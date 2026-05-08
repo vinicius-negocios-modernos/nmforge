@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/
+
+# Build outputs
+dist/
+build/
+out/
+.turbo/
+.next/
+.nuxt/
+
+# Test & coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
+*.swp
+*.swo
+*~
+
+# NMforge runtime artifacts
+.nmforge/metrics.jsonl
+.nmforge/cache/
+_nmforge/user.toml
+
+# Misc
+*.tgz
+.cache/
+tmp/
