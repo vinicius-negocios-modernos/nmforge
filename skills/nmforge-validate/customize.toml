@@ -1,0 +1,8 @@
+# Customization — nmforge-validate
+
+[defaults]
+# Se true, sempre adiciona --strict (warns viram fail)
+default_strict = false
+
+# IDs de regra a ignorar localmente (uso restrito; exige justificativa em comentário)
+rules_to_skip = []

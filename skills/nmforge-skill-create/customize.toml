@@ -1,0 +1,16 @@
+# Customization — nmforge-skill-create
+# Resolução em 3 camadas: framework defaults -> team -> user -> local (P7).
+# Override via:
+#   - <repo>/.nmforge/customize.toml          (team, commitado)
+#   - ~/.config/nmforge/customize.toml        (user, não-commitado)
+#   - ./customize.local.toml                  (local, gitignored)
+
+[defaults]
+# Se setado, scaffold cai em modules/<default_module>/skills/<name>/
+default_module = ""
+
+# Path base para skills core (relativo ao cwd)
+skills_root = "skills"
+
+# Phase default no frontmatter da skill nova
+default_phase = "meta"

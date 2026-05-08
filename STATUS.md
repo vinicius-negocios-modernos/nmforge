@@ -1,6 +1,6 @@
 # NMforge — STATUS
 
-*Atualizado em: 2026-05-08 (após Fase B+).*
+*Atualizado em: 2026-05-08 (após Fase C).*
 *Mantenedor único: Vinicius Caetano.*
 *Atualize este arquivo ao final de cada sessão de trabalho não-trivial.*
 
@@ -12,9 +12,10 @@
 |---|---|
 | Versão | `0.1.0` (não publicada — alpha local) |
 | Branch ativo | `main` |
-| Commits | 3 |
-| Fases concluídas | A (founding docs), B (monorepo + 4 packages), B+ (8 regras hygiene) |
-| Testes | **96/96 ✓** em 10 arquivos Vitest |
+| Commits | 6 |
+| Fases concluídas | A (founding docs), B (monorepo + 4 packages), B+ (8 regras hygiene), **C (5 skills core)** |
+| Testes | **118/118 ✓** em 11 arquivos Vitest |
+| Validator (skills core) | **5 OK / 0 warns / 0 fails** em modo strict |
 | Cobertura threshold | 80% lines configurado (não medido ainda) |
 | Lint / typecheck / build | clean ✓ |
 | Repo público GitHub | **não** (decisão pendente) |
@@ -26,24 +27,22 @@
 - ✅ `@nmforge/customize-resolver` — TOML 3 camadas + deep merge imutável
 - ✅ `@nmforge/hooks` — SessionStart + PreSkill (Node CJS, soft-fail policy)
 - ✅ `@nmforge/core` (CLI `nmforge`) — `install` (stub) / `validate` / `doctor` / `skill create`
+- ✅ **5 skills core** em `skills/`:
+  - `nmforge-skill-create` (paridade com CLI)
+  - `nmforge-validate` (wrapper amigável)
+  - `nmforge-customize` (guia interativo TOML)
+  - `nmforge-doctor` (audit profundo, complementar ao CLI)
+  - `nmforge-help` (router meta-cognitivo)
 
 ## Próximas ações (em ordem)
 
-1. **[ ] Fase C** — implementar 5 skills core
-   - `nmforge-help` (router meta-cognitivo)
-   - `nmforge-doctor` (audit como skill, complementar ao CLI)
-   - `nmforge-customize` (guia interativo TOML)
-   - `nmforge-skill-create` (scaffold via skill — paridade com CLI)
-   - `nmforge-validate` (wrapper amigável)
-   - Estimativa: ~20h
-
-2. **[ ] Fase D** — documentação Diataxis em PT
+1. **[ ] Fase D** — documentação Diataxis em PT
    - Tutorial: "Sua primeira skill em 10 minutos"
    - How-to: customizar sem fork; ativar prompt cache 1h
    - Reference: frontmatter spec + 13 regras do validator
    - Estimativa: ~14h
 
-3. **[ ] Fase E+F** — validation pré-release + publish
+2. **[ ] Fase E+F** — validation pré-release + publish
    - 1 dev externo testa tutorial
    - Cobertura ≥ 85% confirmada
    - CI matrix verde (macOS + Ubuntu × Node 20+22)
@@ -62,10 +61,11 @@
 
 ```bash
 cd ~/dev/nmforge
-git log --oneline                       # timeline (3 commits)
-pnpm install --frozen-lockfile           # caso node_modules tenha sumido
-pnpm test                                # confirma 96/96 verde
-node packages/cli/bin/nmforge.js doctor  # smoke test do CLI
+git log --oneline                          # timeline
+pnpm install --frozen-lockfile              # caso node_modules tenha sumido
+pnpm test                                   # confirma 118/118 verde
+node packages/cli/bin/nmforge.js validate   # 5 skills core OK
+node packages/cli/bin/nmforge.js doctor     # smoke test do CLI
 ```
 
 Documentos canônicos para leitura inicial:

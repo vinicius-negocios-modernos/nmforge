@@ -1,0 +1,8 @@
+# Customization — nmforge-customize
+
+[defaults]
+# Editor para abrir TOML manualmente. Vazio = usar Edit tool.
+editor_command = ""
+
+# Pedir confirmação antes de gravar arquivo de customize
+confirm_writes = true

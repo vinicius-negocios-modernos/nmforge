@@ -1,0 +1,9 @@
+# Customization — nmforge-doctor
+
+[defaults]
+check_legacy_models = true
+check_anti_patterns = true
+check_orphan_refs = true
+
+# Filtra reporte: "info" mostra tudo, "warn" pula info, "fail" só erros graves
+severity_threshold = "info"

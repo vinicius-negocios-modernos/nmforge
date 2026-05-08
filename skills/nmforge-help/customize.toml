@@ -1,0 +1,8 @@
+# Customization — nmforge-help
+
+[defaults]
+# Lista vazia = todas as phases. Caso contrario filtra ex: ["planning", "implementation"]
+default_phase_filter = []
+
+# Incluir skills sob modules/*/skills/ no registry
+show_external_modules = true
