@@ -1,6 +1,6 @@
 # NMforge — STATUS
 
-*Atualizado em: 2026-05-08 (após Fase D).*
+*Atualizado em: 2026-05-08 (após Fase E parcial — 3/4 itens; peer review pendente de dev externo).*
 *Mantenedor único: Vinicius Caetano.*
 *Atualize este arquivo ao final de cada sessão de trabalho não-trivial.*
 
@@ -12,11 +12,13 @@
 |---|---|
 | Versão | `0.1.0` (não publicada — alpha local) |
 | Branch ativo | `main` |
-| Commits | 7 |
-| Fases concluídas | A, B, B+, C, **D (docs Diataxis em PT)** |
-| Testes | **118/118 ✓** em 11 arquivos Vitest |
+| Commits | 8 |
+| Fases concluídas | A, B, B+, C, D, **E parcial (3/4 itens)** |
+| Testes | **136/136 ✓** em 11 arquivos Vitest |
 | Validator (skills core) | **5 OK / 0 warns / 0 fails** em modo strict |
-| Cobertura threshold | 80% lines configurado (não medido ainda) |
+| Cobertura medida | **97.05% lines / 100% functions / 88.69% branches** (alvo ≥85%) |
+| Cobertura por área | CLI commands 100%, validator/src 95.34%, validator/rules 100% |
+| Threshold no `vitest.config` | 85% lines / 85% functions / 80% branches |
 | Lint / typecheck / build | clean ✓ |
 | Repo público GitHub | **não** (decisão pendente) |
 | npm publicado | **não** (nome `nmforge` + `@nmforge/core` reservados livres) |
@@ -40,16 +42,19 @@
   - 2 explanations (`manifesto`, `opus-47-aware`)
   - `_STYLE_GUIDE.md` essencial
 - ✅ **Comunidade**: `CONTRIBUTING.md` + `CODE_OF_CONDUCT.md` (Contributor Covenant 2.1)
+- ✅ **CI matrix** em `.github/workflows/ci.yml`: lint, typecheck, test (Ubuntu+macOS × Node 20+22), validate strict, coverage (com threshold)
+- ✅ **Peer-review protocol** em `docs/how-to/peer-review-tutorial.md`
 
 ## Próximas ações (em ordem)
 
-1. **[ ] Fase E+F** — validation pré-release + publish
-   - 1 dev externo testa tutorial
-   - Cobertura ≥ 85% confirmada
-   - CI matrix verde (macOS + Ubuntu × Node 20+22)
+1. **[ ] Fase E (item 25)** — 1 dev externo segue protocolo de peer review do tutorial. Bloqueado: precisa coordenar com pessoa.
+
+2. **[ ] Fase F** — release
    - Reservar `@nmforge/core@0.1.0-alpha` no npm
-   - Criar repo público GitHub
-   - Estimativa: ~20h
+   - Criar repo público GitHub (org/user a decidir)
+   - Push + tag v0.1.0 + GitHub Release
+   - Anúncio (r/ClaudeAI, Discord BR, LinkedIn)
+   - Estimativa: ~6h (sem peer review feedback) / ~10h (com peer review feedback)
 
 ## Decisões pendentes (precisam de você)
 
@@ -64,10 +69,11 @@
 cd ~/dev/nmforge
 git log --oneline                          # timeline
 pnpm install --frozen-lockfile              # caso node_modules tenha sumido
-pnpm test                                   # confirma 118/118 verde
+pnpm test                                   # confirma 136/136 verde
+pnpm test:coverage                          # confirma ≥85% (atual: 97%)
 node packages/cli/bin/nmforge.js validate   # 5 skills core OK
-node packages/cli/bin/nmforge.js doctor     # smoke test do CLI
 ls docs/                                    # 4 categorias Diataxis
+cat .github/workflows/ci.yml                # CI matrix
 ```
 
 Documentos canônicos para leitura inicial:
