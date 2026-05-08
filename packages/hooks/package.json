@@ -1,0 +1,32 @@
+{
+  "name": "@nmforge/hooks",
+  "version": "0.1.0",
+  "description": "Claude Code hooks for NMforge — SessionStart, PreSkill (PreToolUse for Skill), PostToolUse.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./bin/pre-skill": "./bin/pre-skill.cjs",
+    "./bin/session-start": "./bin/session-start.cjs"
+  },
+  "files": ["dist", "bin", "README.md"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "dev": "tsup src/index.ts --format esm --dts --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nmforge/customize-resolver": "workspace:^"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

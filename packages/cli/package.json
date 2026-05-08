@@ -1,0 +1,36 @@
+{
+  "name": "@nmforge/core",
+  "version": "0.1.0",
+  "description": "NMforge CLI — install, validate, doctor, skill create.",
+  "type": "module",
+  "bin": {
+    "nmforge": "./bin/nmforge.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["bin", "dist", "README.md"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "dev": "tsup src/index.ts --format esm --dts --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nmforge/customize-resolver": "workspace:^",
+    "@nmforge/validator": "workspace:^",
+    "chalk": "^5.4.1",
+    "commander": "^13.0.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
