@@ -48,22 +48,36 @@ Para o racional completo, ver [DESIGN.md](DESIGN.md) e [CONSTITUTION.md](CONSTIT
 | Fase | Conteúdo | Status |
 |---|---|---|
 | A — Setup | Repo + DESIGN + CONSTITUTION + LICENSE | ✅ feito |
-| B — Spikes | Validator + hook PreSkill + customize-resolver | ⏳ próximo |
-| C — Skills core | nmforge-help, nmforge-doctor, nmforge-customize, nmforge-skill-create, nmforge-validate | ⏳ |
-| D — Docs | Tutorial PT + reference + how-tos | ⏳ |
+| B — Spikes | Validator + hook PreSkill + customize-resolver + CLI | ✅ feito |
+| B+ — Hygiene | 8 regras Opus 4.7 no validator | ✅ feito |
+| C — Skills core | nmforge-help, nmforge-doctor, nmforge-customize, nmforge-skill-create, nmforge-validate | ✅ feito |
+| D — Docs | Tutorial PT + reference + how-tos | ⏳ em curso |
 | E — Validation | CI verde + cobertura ≥85% + dev externo testa | ⏳ |
 | F — Release | Publicar `@nmforge/core@0.1.0` no npm | ⏳ |
 
-**Estimativa MVP:** 6-8 semanas calendário.
+**Saúde atual:** 118/118 testes verdes, validator strict 5/5 OK.
 
 ---
 
-## Documentos fundadores
+## Documentos
 
-- [`DESIGN.md`](DESIGN.md) — Design doc completo (1.486 linhas): manifesto, arquitetura, ADRs, MVP scope, roadmap, riscos.
+**Fundadores** (não-negociáveis):
+
 - [`CONSTITUTION.md`](CONSTITUTION.md) — 8 princípios não-negociáveis.
-- `CHANGELOG.md` — em breve.
-- `CONTRIBUTING.md` — em breve.
+- [`DESIGN.md`](DESIGN.md) — design doc completo (1.486 linhas).
+
+**Para usar** (Diataxis, em PT):
+
+- [Tutoriais](docs/tutorials/) — aprender passo a passo (comece em [`01-getting-started`](docs/tutorials/01-getting-started.md)).
+- [How-tos](docs/how-to/) — resolver tarefas concretas.
+- [Reference](docs/reference/) — consulta autoritativa (frontmatter, regras, CLI, hooks).
+- [Explanation](docs/explanation/) — entender o porquê.
+
+**Para contribuir:**
+
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — como mandar PR.
+- [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) — Contributor Covenant 2.1.
+- `CHANGELOG.md` — em breve (a partir de v0.1.0 oficial).
 
 ---
 
