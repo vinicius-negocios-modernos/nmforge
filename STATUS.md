@@ -10,19 +10,19 @@
 
 | Item | Valor |
 |---|---|
-| Versão | `0.1.0` (não publicada — alpha local) |
-| Branch ativo | `main` |
-| Commits | 8 |
-| Fases concluídas | A, B, B+, C, D, **E parcial (3/4 itens)** |
+| Versão | **`0.1.0-alpha.0` publicada** ✓ |
+| Branch ativo | `main` (sincronizado com origin) |
+| Commits | 11 |
+| Fases concluídas | A, B, B+, C, D, **E (3/4)**, **F (publish + tag + release)** |
 | Testes | **136/136 ✓** em 11 arquivos Vitest |
 | Validator (skills core) | **5 OK / 0 warns / 0 fails** em modo strict |
 | Cobertura medida | **97.05% lines / 100% functions / 88.69% branches** (alvo ≥85%) |
 | Cobertura por área | CLI commands 100%, validator/src 95.34%, validator/rules 100% |
-| Threshold no `vitest.config` | 85% lines / 85% functions / 80% branches |
 | Lint / typecheck / build | clean ✓ |
-| Repo público GitHub | decidido: `github.com/vinicius-negocios-modernos/nmforge` (push pendente) |
-| npm publicado | **não** (decidido: stub `@nmforge/core@0.1.0-alpha.0` aguardando login) |
-| Domínio | **`nmforge.com`** comprado ✓ |
+| Repo público GitHub | ✅ https://github.com/vinicius-negocios-modernos/nmforge |
+| npm publicado | ✅ 4 packages sob `@nmforge/*` com tag `alpha` |
+| GitHub Release | ✅ https://github.com/vinicius-negocios-modernos/nmforge/releases/tag/v0.1.0-alpha.0 |
+| Domínio | `nmforge.com` adquirido ✓ (site v0.2+) |
 
 ## Componentes prontos
 
