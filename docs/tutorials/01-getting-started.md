@@ -13,11 +13,11 @@ Este tutorial te leva do `git clone` ao primeiro `nmforge validate` verde. Não 
 NMforge ainda não está publicado no npm (alpha local). Use git:
 
 ```bash
-git clone https://github.com/<TBD>/nmforge.git ~/dev/nmforge
+git clone https://github.com/vinicius-negocios-modernos/nmforge.git ~/dev/nmforge
 cd ~/dev/nmforge
 ```
 
-> **Nota:** repositório público ainda não definido. Veja [STATUS.md](../../STATUS.md) para o estado atual.
+> **Nota:** push público pendente. Estado atual em [STATUS.md](../../STATUS.md).
 
 ## 2. Instalar dependências
 

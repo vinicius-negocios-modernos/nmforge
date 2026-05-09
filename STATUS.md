@@ -20,8 +20,9 @@
 | Cobertura por área | CLI commands 100%, validator/src 95.34%, validator/rules 100% |
 | Threshold no `vitest.config` | 85% lines / 85% functions / 80% branches |
 | Lint / typecheck / build | clean ✓ |
-| Repo público GitHub | **não** (decisão pendente) |
-| npm publicado | **não** (nome `nmforge` + `@nmforge/core` reservados livres) |
+| Repo público GitHub | decidido: `github.com/vinicius-negocios-modernos/nmforge` (push pendente) |
+| npm publicado | **não** (decidido: stub `@nmforge/core@0.1.0-alpha.0` aguardando login) |
+| Domínio | **`nmforge.com`** comprado ✓ |
 
 ## Componentes prontos
 
@@ -56,12 +57,12 @@
    - Anúncio (r/ClaudeAI, Discord BR, LinkedIn)
    - Estimativa: ~6h (sem peer review feedback) / ~10h (com peer review feedback)
 
-## Decisões pendentes (precisam de você)
+## Decisões executivas tomadas (2026-05-08)
 
-- **Quando publicar repo no GitHub?** Sob qual org/user? (`viniciuscaetano/nmforge`, `negociosmodernos/nmforge`, `nmforge-dev/core`)
-- **Reservar `@nmforge/core@0.1.0-alpha` no npm agora?** (evita squat de nome; ~5 min)
-- **Nome do canal Discord/Telegram BR community** (P6 — comunidade BR primary; meta v1.0 = 50+ membros em 6 meses)
-- **Domínio:** confirmar `nmforge.com` (livre verificado em 2026-05-08) e comprar?
+- ✅ **GitHub host:** `vinicius-negocios-modernos/nmforge` (eponímico, modelo OSS pessoal). Migrar para org só se tração justificar.
+- ✅ **npm:** reservar `@nmforge/core@0.1.0-alpha.0` como stub, aguardando `npm login` do usuário.
+- ✅ **Domínio:** `nmforge.com` adquirido. Site Astro/Starlight fica para v0.2+.
+- ⏸ **Canal comunidade BR:** decisão adiada para o release. Criar quando 5+ pessoas pedirem.
 
 ## Para retomar (próxima sessão)
 

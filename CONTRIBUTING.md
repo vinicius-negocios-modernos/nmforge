@@ -7,7 +7,7 @@ Obrigado por considerar contribuir. NMforge é alpha local (v0.1, pré-publicaç
 ## Quick start
 
 ```bash
-git clone <repo-url> ~/dev/nmforge
+git clone https://github.com/vinicius-negocios-modernos/nmforge.git ~/dev/nmforge
 cd ~/dev/nmforge
 pnpm install --frozen-lockfile
 pnpm test         # esperado: 118/118 passing

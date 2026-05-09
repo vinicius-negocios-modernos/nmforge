@@ -27,7 +27,7 @@ NMforge é alpha. Antes de publicar, queremos saber:
 
 ```bash
 # 1. Clone (substitua pela URL real quando o repo for público)
-git clone <repo-url> ~/peer-review-nmforge
+git clone https://github.com/vinicius-negocios-modernos/nmforge.git ~/peer-review-nmforge
 cd ~/peer-review-nmforge
 
 # 2. Crie um branch só para suas anotações
