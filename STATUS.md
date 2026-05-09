@@ -1,6 +1,6 @@
 # NMforge — STATUS
 
-*Atualizado em: 2026-05-08 (após Fase E parcial — 3/4 itens; peer review pendente de dev externo).*
+*Atualizado em: 2026-05-08 (após Fase F — repo publico + npm publish alpha).*
 *Mantenedor único: Vinicius Caetano.*
 *Atualize este arquivo ao final de cada sessão de trabalho não-trivial.*
 
@@ -48,19 +48,18 @@
 
 ## Próximas ações (em ordem)
 
-1. **[ ] Fase E (item 25)** — 1 dev externo segue protocolo de peer review do tutorial. Bloqueado: precisa coordenar com pessoa.
+1. **[ ] Recuperar 2FA do app autenticador** — durante o setup, o seed do TOTP não persistiu no app. 4 dos 5 recovery codes foram consumidos no publish; resta 1. Ir em npmjs.com → Account → 2FA, desabilitar (vai pedir o último recovery code), reabilitar TOTP, escanear QR code, **confirmar que código aparece no app antes de fechar**, salvar novos recovery codes.
 
-2. **[ ] Fase F** — release
-   - Reservar `@nmforge/core@0.1.0-alpha` no npm
-   - Criar repo público GitHub (org/user a decidir)
-   - Push + tag v0.1.0 + GitHub Release
-   - Anúncio (r/ClaudeAI, Discord BR, LinkedIn)
-   - Estimativa: ~6h (sem peer review feedback) / ~10h (com peer review feedback)
+2. **[ ] Anúncio público (Fase F item 31)** — post em r/ClaudeAI, Discord BR de IA, LinkedIn pessoal. ~3h. Considerar segurar até peer review (item 3) trazer feedback.
+
+3. **[ ] Peer review por dev externo** (Fase E item 25) — convidar alguém para seguir `docs/how-to/peer-review-tutorial.md`. Bloqueado em coordenar pessoa.
+
+4. **[ ] Roadmap v0.2** — site Astro/Starlight em `nmforge.com`, regras R-DET-04..09 implementadas, módulos externos (extension marketplace), tradução EN garantida do reference.
 
 ## Decisões executivas tomadas (2026-05-08)
 
 - ✅ **GitHub host:** `vinicius-negocios-modernos/nmforge` (eponímico, modelo OSS pessoal). Migrar para org só se tração justificar.
-- ✅ **npm:** reservar `@nmforge/core@0.1.0-alpha.0` como stub, aguardando `npm login` do usuário.
+- ✅ **npm:** publicado sob org `nmforge` no npmjs.com. 4 packages com tag `alpha`.
 - ✅ **Domínio:** `nmforge.com` adquirido. Site Astro/Starlight fica para v0.2+.
 - ⏸ **Canal comunidade BR:** decisão adiada para o release. Criar quando 5+ pessoas pedirem.
 
