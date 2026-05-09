@@ -1,6 +1,6 @@
 {
   "name": "@nmforge/customize-resolver",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.0",
   "description": "Resolves customize.toml in 3 layers (shipped → team → user) with deep merge, in pure Node (no Python subprocess).",
   "type": "module",
   "main": "./dist/index.js",

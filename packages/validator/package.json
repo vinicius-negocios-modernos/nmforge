@@ -1,6 +1,6 @@
 {
   "name": "@nmforge/validator",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.0",
   "description": "Skill validator for NMforge — determinístico + Opus 4.7 hygiene",
   "type": "module",
   "main": "./dist/index.js",
