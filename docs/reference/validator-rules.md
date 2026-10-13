@@ -1,6 +1,17 @@
 # Reference — Regras do validator
 
-*13 regras implementadas em v0.1: 5 R-DET-* (determinísticas) + 8 R-OP47-* (Opus 4.7 hygiene).*
+*16 regras: 5 R-DET-* (determinísticas), 3 R-AS-* (padrão aberto Agent Skills) e 8 R-OP47-* (hygiene).*
+
+## Perfis
+
+`--profile` escolhe o conjunto de regras (padrão `nmforge`):
+
+| Perfil | Para quê | Diferença |
+|---|---|---|
+| `nmforge` | skills do framework | exige "Use when:" na description (R-DET-02), `allowed-tools` (R-DET-03) e `checklist.md` (R-DET-10) |
+| `agentskills` | qualquer skill no padrão aberto ([agentskills.io](https://agentskills.io)): Claude Code, claude.ai, Agent SDK | troca R-DET-02/03/10 por R-AS-01/02/03: só `name` e `description` são obrigatórios |
+
+As demais regras rodam nos dois perfis. Uma regra pedida com `--rule` roda em qualquer perfil.
 
 ---
 
@@ -13,6 +24,9 @@
 | R-DET-03 | det | fail | ✅ |
 | R-DET-10 | det | fail | ✅ |
 | R-DET-12 | det | fail | ✅ |
+| R-AS-01 | agentskills | fail | ✅ |
+| R-AS-02 | agentskills | fail | ✅ |
+| R-AS-03 | agentskills | warn | ✅ |
 | R-OP47-01 | hyg | warn | ✅ |
 | R-OP47-02 | hyg | warn | ✅ |
 | R-OP47-03 | hyg | warn | ✅ |
@@ -22,7 +36,19 @@
 | R-OP47-07 | hyg | warn | ✅ |
 | R-OP47-08 | hyg | warn | ✅ |
 
-R-DET-04..09 e R-INF-* estão no roadmap (v0.2).
+R-DET-04..09 e R-INF-* estão no roadmap.
+
+## R-AS-01 — `name` no formato do padrão aberto (perfil `agentskills`)
+
+1–64 caracteres, só minúsculas, dígitos e hífens simples, sem hífen no início ou no fim, e sem as palavras reservadas `claude` e `anthropic` (recusadas no upload do claude.ai).
+
+## R-AS-02 — `description` (perfil `agentskills`)
+
+Obrigatória, 10–1024 caracteres, sem tags XML. Deve dizer o que a skill faz e quando usar, em qualquer redação; a frase literal "Use when:" não é exigida.
+
+## R-AS-03 — `allowed-tools` opcional (perfil `agentskills`)
+
+Ausente é válido. Presente, aceita lista YAML ou string separada por espaço ou vírgula, padrões com argumentos (`Bash(git:*)`) e ferramentas MCP (`mcp__*`). Nome desconhecido gera `warn`, porque cada agente tem o próprio conjunto de ferramentas.
 
 ---
 

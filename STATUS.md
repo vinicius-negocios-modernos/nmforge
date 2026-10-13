@@ -1,5 +1,26 @@
 # NMforge — STATUS
 
+*Atualizado em: 2026-10-12 (cópia de trabalho em `~/dev/produtos/nmforge`, sem remote).*
+
+## Agora (2026-10-12)
+
+- Validator aceita o padrão aberto Agent Skills com `--profile agentskills` (R-AS-01..03). As skills de leads-b2b (10), nm-social (14) e coesao-corporativa Lite (1) passam sem warns.
+- Dependências atualizadas, `pnpm audit` limpo; 145 testes, typecheck e lint ok.
+- Esta cópia foi clonada de `_legado/nmforge` e teve o `origin` removido. O repositório público é https://github.com/vinicius-negocios-modernos/nmforge; nada foi enviado.
+
+### Próximos passos
+1. Decidir licença e titular (o 0.1.0-alpha.0 já saiu em MIT no npm e no GitHub, em nome de Vinicius Caetano).
+2. Decidir se estas mudanças sobem para o repositório público e se sai um `0.2.0-alpha.0` no npm.
+3. `pnpm format:check` falha em ~46 arquivos com o prettier atual (formatação antiga); rodar `pnpm format` num commit só de estilo.
+4. Usar `nmforge validate --profile agentskills` no build dos produtos (leads-b2b, nm-social, coesao).
+
+### Bloqueios
+- Nenhum técnico; itens 1 e 2 dependem do Vinícius.
+
+---
+
+## Histórico (2026-05-08)
+
 *Atualizado em: 2026-05-08 (após Fase F — repo publico + npm publish alpha).*
 *Mantenedor único: Vinicius Caetano.*
 *Atualize este arquivo ao final de cada sessão de trabalho não-trivial.*

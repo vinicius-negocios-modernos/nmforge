@@ -8,7 +8,7 @@
 import type { Rule } from '../types.js';
 
 /** Tool names nativas do Claude Code 2.1.x (incluindo deferred tools mais comuns). */
-const VALID_TOOLS = new Set([
+export const VALID_TOOLS = new Set([
   'Read',
   'Write',
   'Edit',
@@ -30,6 +30,7 @@ export const ruleDet03: Rule = {
   id: 'R-DET-03',
   category: 'deterministic',
   severity: 'fail',
+  profiles: ['nmforge'],
   description:
     'Frontmatter `allowed-tools` must be present and list only valid Claude Code 2.1.x tool names.',
   check(ctx) {
@@ -39,8 +40,7 @@ export const ruleDet03: Rule = {
         {
           ruleId: this.id,
           severity: this.severity,
-          message:
-            'Frontmatter `allowed-tools` is required (least-privilege principle, ADR-012).',
+          message: 'Frontmatter `allowed-tools` is required (least-privilege principle, ADR-012).',
         },
       ];
     }
@@ -57,8 +57,7 @@ export const ruleDet03: Rule = {
         {
           ruleId: this.id,
           severity: this.severity,
-          message:
-            'Frontmatter `allowed-tools` must be an array or comma-separated string.',
+          message: 'Frontmatter `allowed-tools` must be an array or comma-separated string.',
         },
       ];
     }

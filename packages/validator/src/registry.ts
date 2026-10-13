@@ -12,6 +12,9 @@ import { ruleDet02 } from './rules/r-det-02-description-has-use-when.js';
 import { ruleDet03 } from './rules/r-det-03-allowed-tools-present.js';
 import { ruleDet10 } from './rules/r-det-10-checklist-exists.js';
 import { ruleDet12 } from './rules/r-det-12-frontmatter-parseable.js';
+import { ruleAs01 } from './rules/r-as-01-name-format.js';
+import { ruleAs02 } from './rules/r-as-02-description.js';
+import { ruleAs03 } from './rules/r-as-03-allowed-tools-optional.js';
 import { ruleOp4701 } from './rules/r-op47-01-critical-count.js';
 import { ruleOp4702 } from './rules/r-op47-02-line-limit.js';
 import { ruleOp4703 } from './rules/r-op47-03-sequential-reads.js';
@@ -21,7 +24,7 @@ import { ruleOp4706 } from './rules/r-op47-06-token-budget.js';
 import { ruleOp4707 } from './rules/r-op47-07-must-count.js';
 import { ruleOp4708 } from './rules/r-op47-08-activation-ritual.js';
 
-/** Lista canônica de regras do MVP v0.1 + B+ (8 hygiene). Ordem importa: R-DET-12 primeiro. */
+/** Lista canônica de regras (determinísticas, Agent Skills e 8 hygiene). Ordem importa: R-DET-12 primeiro. */
 export const RULES: ReadonlyArray<Rule> = [
   // Determinísticas (5)
   ruleDet12,
@@ -29,6 +32,10 @@ export const RULES: ReadonlyArray<Rule> = [
   ruleDet02,
   ruleDet03,
   ruleDet10,
+  // Padrão aberto Agent Skills (perfil agentskills)
+  ruleAs01,
+  ruleAs02,
+  ruleAs03,
   // Opus 4.7 hygiene (8)
   ruleOp4701,
   ruleOp4702,

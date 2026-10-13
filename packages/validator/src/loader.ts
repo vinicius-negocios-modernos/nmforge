@@ -82,4 +82,3 @@ async function collect(root: string, dir: string, acc: string[]): Promise<void> 
     }
   }
 }
-

@@ -45,11 +45,13 @@ node packages/cli/bin/nmforge.js validate [opções]
 | `--skill <name>` | string | Filtra para uma única skill. |
 | `--rule <id>` | string | Roda apenas uma regra (ex.: `R-OP47-05`). |
 | `--json` | bool | Saída JSON para parsing. |
+| `--profile <nome>` | string | `nmforge` (padrão) ou `agentskills` (padrão aberto Agent Skills). |
 
 **Exit codes:**
 
 - `0` — todas passam (warns toleradas em modo normal).
 - `1` — pelo menos uma fail OU warn em modo strict.
+- `2` — perfil desconhecido.
 
 **Exemplo de saída humana:**
 

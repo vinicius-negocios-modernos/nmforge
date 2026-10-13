@@ -10,6 +10,7 @@ export const ruleDet02: Rule = {
   id: 'R-DET-02',
   category: 'deterministic',
   severity: 'fail',
+  profiles: ['nmforge'],
   description:
     'Frontmatter `description` must be present, contain at least one sentence, and include "Use when:" trigger.',
   check(ctx) {

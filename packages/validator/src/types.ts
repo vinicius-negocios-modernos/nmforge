@@ -4,7 +4,17 @@
 
 export type Severity = 'fail' | 'warn' | 'info';
 
-export type RuleCategory = 'deterministic' | 'opus47-hygiene' | 'inference';
+export type RuleCategory = 'deterministic' | 'opus47-hygiene' | 'inference' | 'agentskills';
+
+/**
+ * Perfil de validação.
+ * - `nmforge`: regras do framework (exige "Use when:", `allowed-tools` e `checklist.md`).
+ * - `agentskills`: padrão aberto Agent Skills (agentskills.io): só `name` e `description`
+ *   são obrigatórios; `allowed-tools` e `checklist.md` são opcionais.
+ */
+export type Profile = 'nmforge' | 'agentskills';
+
+export const PROFILES: ReadonlyArray<Profile> = ['nmforge', 'agentskills'];
 
 export interface RuleViolation {
   ruleId: string;
@@ -38,6 +48,8 @@ export interface Rule {
   category: RuleCategory;
   severity: Severity;
   description: string;
+  /** Perfis em que a regra roda. Ausente = todos. */
+  profiles?: ReadonlyArray<Profile>;
   /** Roda a regra. Retorna lista vazia se passou; lista de violações se falhou. */
   check: (ctx: SkillContext) => RuleViolation[];
 }
@@ -54,4 +66,6 @@ export interface ValidatorOptions {
   strict?: boolean;
   /** Se setado, roda apenas as regras com esses IDs. */
   ruleIds?: string[];
+  /** Perfil de regras. Padrão: `nmforge`. */
+  profile?: Profile;
 }

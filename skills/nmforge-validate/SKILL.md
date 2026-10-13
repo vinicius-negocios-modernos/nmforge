@@ -1,7 +1,7 @@
 ---
 name: nmforge-validate
 description: |
-  Roda o validator (13 regras R-DET-* e R-OP47-*) em uma ou todas as skills e traduz a saída em ações claras.
+  Roda o validator (regras R-DET-*, R-AS-* e R-OP47-*) em uma ou todas as skills e traduz a saída em ações claras.
   Use when: após editar uma skill, antes de commit, ou quando o usuário pede "audit/check/lint" das skills.
 
 allowed-tools: Read, Bash, Glob
@@ -44,6 +44,12 @@ Filtrar por skill:
 
 ```bash
 node packages/cli/bin/nmforge.js validate --skill <name>
+```
+
+Skills no padrão aberto Agent Skills (fora do framework: só `name` e `description` obrigatórios):
+
+```bash
+node packages/cli/bin/nmforge.js validate --profile agentskills
 ```
 
 Modo CI (warns viram fail):

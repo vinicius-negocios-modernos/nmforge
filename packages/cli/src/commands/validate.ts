@@ -4,7 +4,8 @@
 
 import chalk from 'chalk';
 import { discoverSkills, loadSkill, runValidation } from '@nmforge/validator';
-import type { ValidationResult } from '@nmforge/validator';
+import { PROFILES } from '@nmforge/validator';
+import type { Profile, ValidationResult } from '@nmforge/validator';
 
 export interface ValidateOptions {
   cwd?: string;
@@ -12,10 +13,16 @@ export interface ValidateOptions {
   skill?: string;
   rule?: string;
   json?: boolean;
+  /** `nmforge` (padrão) ou `agentskills` (padrão aberto). */
+  profile?: string;
 }
 
 export async function runValidateCommand(options: ValidateOptions = {}): Promise<number> {
   const cwd = options.cwd ?? process.cwd();
+  if (options.profile !== undefined && !PROFILES.includes(options.profile as Profile)) {
+    console.error(chalk.red(`Unknown profile "${options.profile}". Use: ${PROFILES.join(', ')}.`));
+    return 2;
+  }
   const skillRoots = await discoverSkills(cwd);
 
   const filtered = options.skill
@@ -31,7 +38,8 @@ export async function runValidateCommand(options: ValidateOptions = {}): Promise
     return 0;
   }
 
-  const validatorOptions: { strict?: boolean; ruleIds?: string[] } = {};
+  const validatorOptions: { strict?: boolean; ruleIds?: string[]; profile?: Profile } = {};
+  if (options.profile !== undefined) validatorOptions.profile = options.profile as Profile;
   if (options.strict !== undefined) validatorOptions.strict = options.strict;
   if (options.rule !== undefined) validatorOptions.ruleIds = [options.rule];
 
@@ -69,8 +77,7 @@ function printHumanResults(results: ValidationResult[]): void {
     const icon = fails > 0 ? chalk.red('[✗]') : chalk.yellow('[!]');
     console.log(`${icon} ${r.skill.padEnd(30)} ${summary}`);
     for (const v of r.violations) {
-      const sevIcon =
-        v.severity === 'fail' ? chalk.red(v.severity) : chalk.yellow(v.severity);
+      const sevIcon = v.severity === 'fail' ? chalk.red(v.severity) : chalk.yellow(v.severity);
       console.log(`    ${chalk.gray(v.ruleId)}  ${sevIcon}: ${v.message}`);
     }
   }
@@ -87,7 +94,5 @@ function printHumanResults(results: ValidationResult[]): void {
   console.log(
     `Summary: ${chalk.green(`${okCount} OK`)}, ${chalk.yellow(`${totalWarns} warns`)}, ${chalk.red(`${totalFails} fails`)}.`
   );
-  console.log(
-    `Build: ${totalFails === 0 ? chalk.green('PASS') : chalk.red('FAIL')}.`
-  );
+  console.log(`Build: ${totalFails === 0 ? chalk.green('PASS') : chalk.red('FAIL')}.`);
 }

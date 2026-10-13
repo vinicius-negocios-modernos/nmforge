@@ -11,6 +11,7 @@ export const ruleDet10: Rule = {
   id: 'R-DET-10',
   category: 'deterministic',
   severity: 'fail',
+  profiles: ['nmforge'],
   description: 'Skill folder must contain `checklist.md` (test-first gate, P5).',
   check(ctx) {
     const hasChecklist = ctx.files.some(

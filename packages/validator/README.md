@@ -4,7 +4,7 @@ Skill validator para NMforge — regras determinísticas + Opus 4.7 hygiene.
 
 ## Status
 
-v0.1 (MVP + B+). **13 regras** ativas: 5 determinísticas + 8 hygiene.
+**16 regras**: 5 determinísticas, 3 do padrão aberto Agent Skills e 8 hygiene, em dois perfis: `nmforge` (padrão, regras do framework) e `agentskills` (só `name` e `description` obrigatórios). Ver `docs/reference/validator-rules.md`.
 
 ## Uso programático
 
@@ -14,7 +14,7 @@ import { discoverSkills, loadSkill, runValidation } from '@nmforge/validator';
 const roots = await discoverSkills(process.cwd());
 for (const root of roots) {
   const ctx = await loadSkill(root);
-  const result = runValidation(ctx, { strict: true });
+  const result = runValidation(ctx, { strict: true, profile: 'agentskills' });
   console.log(result.skill, result.passed ? 'OK' : 'FAIL');
 }
 ```

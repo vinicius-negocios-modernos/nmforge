@@ -13,7 +13,9 @@ export async function main(argv: string[]): Promise<number> {
 
   program
     .name('nmforge')
-    .description('NMforge — Framework Node-nativo de orquestração de agentes para Claude Code 2.1.x')
+    .description(
+      'NMforge — Framework Node-nativo de orquestração de agentes para Claude Code 2.1.x'
+    )
     .version('0.1.0');
 
   program
@@ -32,12 +34,17 @@ export async function main(argv: string[]): Promise<number> {
 
   program
     .command('validate')
-    .description('Validate skills against rules (R-DET-* + R-OP47-* hygiene)')
+    .description('Validate skills against rules (R-DET-*, R-AS-* and R-OP47-* hygiene)')
     .option('--cwd <path>', 'Working directory', process.cwd())
     .option('--strict', 'Treat warns as fails (CI mode)')
     .option('--skill <name>', 'Validate only one skill (by directory name)')
     .option('--rule <id>', 'Run only one rule by ID')
     .option('--json', 'Emit JSON for parsing')
+    .option(
+      '--profile <name>',
+      'Rule profile: nmforge (framework rules) or agentskills (open Agent Skills standard)',
+      'nmforge'
+    )
     .action(
       async (opts: {
         cwd: string;
@@ -45,12 +52,14 @@ export async function main(argv: string[]): Promise<number> {
         skill?: string;
         rule?: string;
         json?: boolean;
+        profile?: string;
       }) => {
         const validateOpts: Parameters<typeof runValidateCommand>[0] = { cwd: opts.cwd };
         if (opts.strict !== undefined) validateOpts.strict = opts.strict;
         if (opts.skill !== undefined) validateOpts.skill = opts.skill;
         if (opts.rule !== undefined) validateOpts.rule = opts.rule;
         if (opts.json !== undefined) validateOpts.json = opts.json;
+        if (opts.profile !== undefined) validateOpts.profile = opts.profile;
         const code = await runValidateCommand(validateOpts);
         process.exitCode = code;
       }
@@ -68,26 +77,19 @@ export async function main(argv: string[]): Promise<number> {
       process.exitCode = code;
     });
 
-  const skillCmd = program
-    .command('skill')
-    .description('Skill scaffolding & operations');
+  const skillCmd = program.command('skill').description('Skill scaffolding & operations');
 
   skillCmd
     .command('create <name>')
     .description('Scaffold a new skill (SKILL.md + checklist + steps-c/e/v)')
     .option('--cwd <path>', 'Working directory', process.cwd())
     .option('--module <name>', 'Place under modules/<name>/skills/ instead of skills/')
-    .action(
-      async (
-        name: string,
-        opts: { cwd: string; module?: string }
-      ) => {
-        const skillOpts: Parameters<typeof runSkillCreateCommand>[0] = { cwd: opts.cwd, name };
-        if (opts.module !== undefined) skillOpts.module = opts.module;
-        const code = await runSkillCreateCommand(skillOpts);
-        process.exitCode = code;
-      }
-    );
+    .action(async (name: string, opts: { cwd: string; module?: string }) => {
+      const skillOpts: Parameters<typeof runSkillCreateCommand>[0] = { cwd: opts.cwd, name };
+      if (opts.module !== undefined) skillOpts.module = opts.module;
+      const code = await runSkillCreateCommand(skillOpts);
+      process.exitCode = code;
+    });
 
   await program.parseAsync(argv);
   const exitCode = process.exitCode;

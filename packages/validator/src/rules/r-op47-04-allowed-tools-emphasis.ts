@@ -16,8 +16,7 @@ export const ruleOp4704: Rule = {
   id: 'R-OP47-04',
   category: 'opus47-hygiene',
   severity: 'fail',
-  description:
-    '`allowed-tools` declared (least-privilege; emphasis-alias for R-DET-03; ADR-012).',
+  description: '`allowed-tools` declared (least-privilege; emphasis-alias for R-DET-03; ADR-012).',
   check(ctx) {
     // Mesma checagem de R-DET-03 mas com mensagem de emphasis. Se ambas
     // passam ou ambas falham — só uma reporta (R-DET-03 vai primeiro no

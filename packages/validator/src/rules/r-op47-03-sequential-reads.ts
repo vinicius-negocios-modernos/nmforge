@@ -14,7 +14,8 @@
 import type { Rule, RuleViolation } from '../types.js';
 
 const NUMBERED_READ_RE = /^\s*\d+\.\s+(Read|Load|Carregue|Leia)\b/i;
-const PARALLEL_HINT_RE = /\b(parallel|in parallel|single message|concurrent|paralel(o|amente)|em paralelo|simultane)/i;
+const PARALLEL_HINT_RE =
+  /\b(parallel|in parallel|single message|concurrent|paralel(o|amente)|em paralelo|simultane)/i;
 const MIN_CONSECUTIVE = 4;
 const HINT_WINDOW = 8; // linhas antes/depois pra procurar dica de paralelismo
 
