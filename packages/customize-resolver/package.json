@@ -1,7 +1,14 @@
 {
   "name": "@nmforge/customize-resolver",
-  "version": "0.1.0-alpha.0",
+  "version": "0.2.0-alpha.0",
   "description": "Resolves customize.toml in 3 layers (shipped → team → user) with deep merge, in pure Node (no Python subprocess).",
+  "license": "MIT",
+  "author": "Vinicius Caetano / Negócios Modernos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinicius-negocios-modernos/nmforge.git",
+    "directory": "packages/customize-resolver"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

@@ -16,7 +16,7 @@ export async function main(argv: string[]): Promise<number> {
     .description(
       'NMforge — Framework Node-nativo de orquestração de agentes para Claude Code 2.1.x'
     )
-    .version('0.1.0');
+    .version('0.2.0-alpha.0');
 
   program
     .command('install')

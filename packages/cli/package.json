@@ -1,7 +1,14 @@
 {
   "name": "@nmforge/core",
-  "version": "0.1.0-alpha.0",
+  "version": "0.2.0-alpha.0",
   "description": "NMforge CLI — install, validate, doctor, skill create.",
+  "license": "MIT",
+  "author": "Vinicius Caetano / Negócios Modernos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinicius-negocios-modernos/nmforge.git",
+    "directory": "packages/cli"
+  },
   "type": "module",
   "bin": {
     "nmforge": "./bin/nmforge.js"

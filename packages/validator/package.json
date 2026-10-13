@@ -1,7 +1,14 @@
 {
   "name": "@nmforge/validator",
-  "version": "0.1.0-alpha.0",
+  "version": "0.2.0-alpha.0",
   "description": "Skill validator for NMforge — determinístico + Opus 4.7 hygiene",
+  "license": "MIT",
+  "author": "Vinicius Caetano / Negócios Modernos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinicius-negocios-modernos/nmforge.git",
+    "directory": "packages/validator"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

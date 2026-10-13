@@ -1,7 +1,14 @@
 {
   "name": "@nmforge/hooks",
-  "version": "0.1.0-alpha.0",
+  "version": "0.2.0-alpha.0",
   "description": "Claude Code hooks for NMforge — SessionStart, PreSkill (PreToolUse for Skill), PostToolUse.",
+  "license": "MIT",
+  "author": "Vinicius Caetano / Negócios Modernos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinicius-negocios-modernos/nmforge.git",
+    "directory": "packages/hooks"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

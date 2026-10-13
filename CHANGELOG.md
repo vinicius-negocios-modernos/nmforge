@@ -1,6 +1,6 @@
 # Changelog
 
-## [Não publicado] — 2026-10-12
+## [0.2.0-alpha.0] — 2026-10-12
 
 ### Adicionado
 - Perfil `agentskills` no validator (`--profile agentskills` no CLI, `profile` em `runValidation`): valida skills no padrão aberto Agent Skills, em que só `name` e `description` são obrigatórios. Regras novas:
@@ -14,6 +14,9 @@
 - R-DET-02, R-DET-03 e R-DET-10 passam a rodar só no perfil `nmforge` (o padrão, sem mudança de comportamento para quem não usa `--profile`).
 - Regra pedida com `--rule` roda em qualquer perfil.
 - Perfil desconhecido sai com código 2.
+
+### Licença
+- Continua MIT. A partir desta versão o aviso de copyright inclui Negócios Modernos, mantendo a linha original.
 
 ### Segurança
 - Dependências atualizadas: vitest 5, @vitest/coverage-v8 5, tsup, prettier, typescript-eslint, yaml 2.9 e smol-toml 1.9 (esta em produção, no `@nmforge/customize-resolver`).
