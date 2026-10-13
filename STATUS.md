@@ -1,20 +1,20 @@
 # NMforge — STATUS
 
-*Atualizado em: 2026-10-12 (cópia de trabalho em `~/dev/produtos/nmforge`, sem remote).*
+*Atualizado em: 2026-10-13. `~/dev/produtos/nmforge` aponta para o GitHub (origin).*
 
 ## Agora (2026-10-12)
 
 - Validator aceita o padrão aberto Agent Skills com `--profile agentskills` (R-AS-01..03). As skills de leads-b2b (10), nm-social (14) e coesao-corporativa Lite (1) passam sem warns.
 - Dependências atualizadas, `pnpm audit` limpo; 145 testes, typecheck e lint ok.
-- Esta cópia foi clonada de `_legado/nmforge` e teve o `origin` removido. O repositório público é https://github.com/vinicius-negocios-modernos/nmforge; nada foi enviado.
+- 0.2.0-alpha.0 publicada em 2026-10-13: npm (tag `alpha`; `latest` segue em 0.1.0-alpha.0) e release https://github.com/vinicius-negocios-modernos/nmforge/releases/tag/v0.2.0-alpha.0. Esta pasta é agora o clone de trabalho; `_legado/nmforge` ficou parado em 0.1.
 
 ### Próximos passos
-1. `0.2.0-alpha.0` preparada localmente (versões, LICENSE com Negócios Modernos, metadados e LICENSE em cada pacote, `pnpm pack` conferido). Falta: confirmação do Vinícius, `npm login` na conta dona de `@nmforge`, push de `main` + tag `v0.2.0-alpha.0` e `pnpm -r publish --tag alpha`.
-2. `pnpm format:check` falha em ~46 arquivos com o prettier atual (formatação antiga); rodar `pnpm format` num commit só de estilo.
-3. Usar `nmforge validate --profile agentskills` no build dos produtos (leads-b2b, nm-social, coesao, postagens).
+1. `pnpm format:check` falha em ~46 arquivos com o prettier atual (formatação antiga); rodar `pnpm format` num commit só de estilo.
+2. Usar `nmforge validate --profile agentskills` no build dos produtos (leads-b2b, nm-social, coesao, postagens).
+3. Decidir quando mover `latest` para a 0.2.
 
 ### Bloqueios
-- npm sem login nesta máquina (401).
+- Nenhum. Publicar no npm exige o 2FA do Vinícius.
 
 ---
 
